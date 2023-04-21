@@ -50,7 +50,7 @@ export const Projects = () => {
                             Ut commodo eiusmod pariatur proident elit consequat reprehenderit eu culpa sint minim. Minim exercitation irure ut dolor anim. Ullamco et culpa in consectetur. Minim eiusmod duis aute proident Lorem fugiat tempor sit est cillum laborum eiusmod velit est. Ut ex eu sint anim incididunt esse proident elit sint cupidatat voluptate.
                         </p>
                         <Tab.Container id="projects-tabs" defaultActiveKey ="first">
-                            <Nav variant="pills" defaultActiveKey="/home">
+                            <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                                 <Nav.Item>
                                     <Nav.Link eventKey="first">Tab One</Nav.Link>
                                 </Nav.Item>
@@ -78,8 +78,8 @@ export const Projects = () => {
                                         }
                                     </Row>
                                 </Tab.Pane>
-                                <Tab.Pane evenKey="second">Dolor irure</Tab.Pane>
-                                <Tab.Pane evenKey="third">Lorem Ipsum</Tab.Pane>
+                                <Tab.Pane eventKey="second">Dolor irure</Tab.Pane>
+                                <Tab.Pane eventKey="third">Lorem Ipsum</Tab.Pane>
                             </Tab.Content>
                         </Tab.Container>
                     </Col>
