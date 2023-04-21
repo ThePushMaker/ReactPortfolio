@@ -47,7 +47,7 @@ export const Banner = () => {
                 <Row className="align-items-center">
                     <Col xs={12} md={6} xl={7}>
                         <span className="tagline">Welcome to my portafolio</span>
-                        <h1>{'Hi, im webdecoded '}<span className="wrap">{text}</span></h1>
+                        <h1>{"Hi, I'm ScxryW0rld! "}<span className="wrap">{text}</span></h1>
                         <p>Exercitation esse reprehenderit consectetur sit ullamco elit ullamco commodo. Anim culpa reprehenderit esse deserunt sint voluptate qui pariatur ad nisi non est dolor. Dolor officia eiusmod excepteur qui incididunt.</p>
                         <button onClick={() => console.log('connect')}>Let's connect <ArrowRightCircle size={25} /></button>
                     </Col>
