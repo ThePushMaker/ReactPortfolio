@@ -358,8 +358,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /** projects **/
 .project {
-  padding: 120px 0;
-  z-index: -1;
+  padding: 80px 0;
   position: relative;
   background-color: black;
 }
@@ -451,7 +450,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .proj-txtx {
   position: absolute;
   text-align: center;
-  top:65%;
+  top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
   transition: 0.5s ease-in-out;
