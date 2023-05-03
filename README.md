@@ -1,4 +1,4 @@
-Este proyecto fue creado
+Sitio web portafolio freelancer desarrollado en React de despliege de proyectos e información de contacto con animaciones avanzadas y suscripción a boletín de noticias.
 
 ![Imagen del proyecto terminado](https://raw.githubusercontent.com/DSW-47/ReactWebPortafolioFreelancer/master/src/assets/img/proyecto-portafolio-full.png)
 
