@@ -25,9 +25,9 @@ export const Newsletter = ({ onValidated, status, message }) => {
 
   return (
     <Col lg={12}>
-      <TrackVisibility once>
+      <TrackVisibility partialVisibility once>
           {({ isVisible }) =>
-          <div className={isVisible ? "animate__animated animate__bounceIn " : ""}>
+          <div className={isVisible ? "animate__animated animate__zoomIn " : ""}>
             <div className="newsletter-bx wow slideInUp">
               <Row>
                 <Col lg={12} md={6} xl={5}>
