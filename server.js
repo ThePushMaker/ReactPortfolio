@@ -1,9 +1,11 @@
+require('dotenv').config();
+
 const express = require("express");
 const router = express.Router();
 const cors = require("cors");
 const nodemailer = require("nodemailer");
 
-// Server used ti send emails
+// server used to send send emails
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -13,44 +15,44 @@ console.log(process.env.EMAIL_USER);
 console.log(process.env.EMAIL_PASS);
 
 const contactEmail = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: "mscalderon.developer@gmail.com",
-        pass: "+P0ntelaspilaswe"
-    },
+  service: 'outlook',
+  auth: {
+    user: process.env.REACT_APP_NODEMAILER_USER,
+    pass: process.env.REACT_APP_NODEMAILER_PASS
+  },
 });
 
 contactEmail.verify((error) => {
-    if (error) {
-        console.log(error);
-    }else {
-        console.log("Ready to Send");
-    }
+  if (error) {
+    console.log(error);
+  } else {
+    console.log("Ready to Send");
+  }
 });
 
 router.post("/contact", (req, res) => {
-    const name = req.body.firstName + req.body.lastName;
-    const email = req.body.email;
-    const message = req.body.message;
-    const phone = req.body.phone;
-    const mail = {
-        from: name,
-        to: "mscalderon.developer@gmail.com",
-        html: `
-                <p>Name: ${name}</p>
-                <p>Email: ${email}</p>
-                <p>Phone: ${phone}</p>
-                <p>Message: ${message}</p>
-            `
+  const name = req.body.firstName;
+  const lastname = req.body.lastName;
+  const email = req.body.email;
+  const message = req.body.message;
+  const phone = req.body.phone;
+  const mail = {
+    from: process.env.REACT_APP_NODEMAILER_USER,
+    to: process.env.REACT_APP_NODEMAILER_RECIPIENT,
+    subject: "¡Te contactaron por trabajo! - Portfolio",
+    html: `Buen día. Felicidades, has sido contactado por trabajo desde tu sitio web de portafolio! 
+          Los datos del mensaje del cliente son los siguientes:
+           <p>Name: ${name}</p>
+           <p>Lastname: ${lastname}</p>
+           <p>Email: ${email}</p>
+           <p>Phone: ${phone}</p>
+           <p>Message: ${message}</p>`,
+  };
+  contactEmail.sendMail(mail, (error) => {
+    if (error) {
+      res.json(error);
+    } else {
+      res.json({ code: 200, status: "Message Sent" });
     }
-
-    contactEmail.sendMail(mail, (error) => {
-        if (error) {
-            res.json(error);
-        }else {
-            res.json({ code: 200, status: "Message Sent"});
-        }
-        
-    });
+  });
 });
-

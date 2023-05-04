@@ -4,7 +4,8 @@ import meter1 from '../assets/img/meter1.svg';
 import meter2 from '../assets/img/meter2.svg';
 import meter3 from '../assets/img/meter3.svg';
 import colorSharp from '../assets/img/color-sharp.png';
-
+import 'animate.css';
+import TrackVisibility from "react-on-screen";
 
 export const Skills = () => {
     const responsive = {
@@ -33,24 +34,49 @@ export const Skills = () => {
             <div className="row">
                 <div className="col-12">
                     <div className="skill-bx wow zoomIn">
+                    <TrackVisibility partialVisibility  once>
+                            {({ isVisible}) =>  
+                                <div className={isVisible ? "animate__animated animate__fadeInRight" : ""}>
                         <h2>Skills</h2>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br></br> Lorem Ipsum has been the industry's standard dummy text.</p>
+                        </div>}
+                        </TrackVisibility>
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
                             <div className="item">
+                             <TrackVisibility partialVisibility once>
+                               {({ isVisible}) =>  
+                                <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
                                 <img src={meter1} alt="Image1" />
                                 <h5>Web Development</h5>
+                                </div>}
+                              </TrackVisibility>
                             </div>
                             <div className="item">
+                            <TrackVisibility partialVisibility once>
+                               {({ isVisible}) =>  
+                               <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
                                 <img src={meter2} alt="Image2" />
                                 <h5>Brand Identity</h5>
+                                </div>}
+                              </TrackVisibility>
                             </div>
                             <div className="item">
+                            <TrackVisibility partialVisibility once>
+                               {({ isVisible}) =>  
+                               <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
                                 <img src={meter3} alt="Image3" />
                                 <h5>Logo Design</h5>
+                                </div>}
+                              </TrackVisibility>
                             </div>
                             <div className="item">
+                              <TrackVisibility partialVisibility once>
+                               {({ isVisible}) =>  
+                               <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
                                 <img src={meter1} alt="Image4" />
                                 <h5>Web Development</h5>
+                                </div>}
+                              </TrackVisibility>
                             </div>
                         </Carousel>
                     </div>

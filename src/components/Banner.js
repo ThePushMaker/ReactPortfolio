@@ -48,19 +48,28 @@ export const Banner = () => {
             <Container>
                 <Row className="align-items-center">
                     <Col xs={12} md={6} xl={7}>
-                        <TrackVisibility>
+                        <TrackVisibility once>
                         {({ isVisible}) =>  
-                            <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                            <div className={isVisible ? "animate__animated animate__fadeInUp " : ""}>
                                 <span className="tagline">Welcome to my portafolio</span>
                                 <h1>{"Hi, I'm Martin Calderon! "}<span className="wrap">{text}</span></h1>
                                 <p>Exercitation esse reprehenderit consectetur sit ullamco elit ullamco commodo. Anim culpa reprehenderit esse deserunt sint voluptate qui pariatur ad nisi non est dolor. Dolor officia eiusmod excepteur qui incididunt.</p>
+                                </div>}
+                        </TrackVisibility>
+                        <TrackVisibility once>
+                            {({ isVisible}) =>  
+                            <div className={isVisible ? "animate__animated animate__bounceInLeft animate__slow" : ""}>
                                 <button onClick={() => console.log('connect')}>Let's connect <ArrowRightCircle size={25} /></button>
-                            </div>}
+                        </div>}
                         </TrackVisibility>
                     </Col>
                     <Col xs={12} md={6} xl={5}>
-                        <img src={headerImg} alt="Header Img"/>
-                        
+                        <TrackVisibility once>
+                            {({ isVisible }) =>
+                            <div className={isVisible ? "animate__animated animate__zoomIn animate__slower" : ""}>
+                                <img src={headerImg} alt="Header Img"/>
+                            </div>}
+                        </TrackVisibility>
                     </Col>
                 </Row>
             </Container>

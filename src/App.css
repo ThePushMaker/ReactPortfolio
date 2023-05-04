@@ -299,7 +299,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin-left: 25px;
 }
 .banner img {
-  animation: updown 6s linear infinite;
+  animation: updown 8s linear infinite;
 }
 @keyframes updown {
   0% {
