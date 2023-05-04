@@ -7,7 +7,8 @@ import logo from '../assets/img/logo.svg';
 import navIcon1 from '../assets/img/nav-icon1.svg';
 import navIcon2 from '../assets/img/nav-icon2.svg';
 import navIcon3 from '../assets/img/nav-icon3.svg';
-
+import 'animate.css';
+import TrackVisibility from 'react-on-screen';
 
 
 export const NavBar = () =>  {
@@ -33,7 +34,10 @@ export const NavBar = () =>  {
     }
 
     return (
-    <Navbar expand="lg" className={ scrolled ? "scrolled":  ""}>
+      <TrackVisibility partialVisibility once>
+          {({ isVisible }) =>
+          <div className={isVisible ? "animate__animated animate__zoomInDown " : ""}>
+      <Navbar expand="lg" className={ scrolled ? "scrolled":  ""}>
       <Container>
         <Navbar.Brand href="#home">
         <img src={logo} alt="Logo"/>
@@ -58,6 +62,7 @@ export const NavBar = () =>  {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-
+</div>}
+      </TrackVisibility>
     )
 }
