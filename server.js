@@ -40,10 +40,10 @@ router.post("/contact", (req, res) => {
     from: process.env.REACT_APP_NODEMAILER_USER,
     to: process.env.REACT_APP_NODEMAILER_RECIPIENT,
     subject: "¡Te contactaron por trabajo! - Portfolio",
-    html: `Buen día. Felicidades, has sido contactado por trabajo desde tu sitio web de portafolio! 
+    html: `Buen día ¡Felicidades, has sido contactado por trabajo desde tu sitio web de portafolio! 
           Los datos del mensaje del cliente son los siguientes:
            <p>Name: ${name}</p>
-           <p>Lastname: ${lastname}</p>
+           <p>LastName: ${lastname}</p>
            <p>Email: ${email}</p>
            <p>Phone: ${phone}</p>
            <p>Message: ${message}</p>`,
